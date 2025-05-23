@@ -1,10 +1,12 @@
 # basic_operations.py
 
-# Basic arithmetic operations
-a = 10
-b = 5
+number1 = 10
+number2 = 5
 
-print(f"Addition: {a + b}")
-print(f"Subtraction: {a - b}")
-print(f"Multiplication: {a * b}")
-print(f"Division: {a / b}")
+addition = number1 + number2
+subtraction = number1 - number2
+multiplication = number1 * number2
+
+print(f"Addition of {number1} and {number2} is {addition}")
+print(f"Subtraction of {number1} and {number2} is {subtraction}")
+print(f"Multiplication of {number1} and {number2} is {multiplication}")
