@@ -1,9 +1,3 @@
-# simple_interest.py
-
-principal = 1000
-rate = 0.05
-time = 3
-
-interest = principal * rate * time
-
-print(f"The simple interest is: {interest}")
+current_age = int(input("How old are you? "))
+future_age = current_age + (2050 - 2023)
+print(f"In 2050, you will be {future_age} years old")
