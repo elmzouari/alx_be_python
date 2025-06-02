@@ -6,29 +6,40 @@ def display_menu():
     print("4. Exit")
 
 def main():
-    shopping_list = []  # Array implementation
+    shopping_list = []
     while True:
-        display_menu()  # Function call
-        choice = input("Enter your choice: ")
+        display_menu()
         
-        if choice == '1':
+        try:
+            # Convert input to integer explicitly
+            choice = int(input("Enter your choice: "))
+        except ValueError:
+            print("Invalid choice. Please enter a number between 1-4.")
+            continue
+            
+        if choice == 1:
             item = input("Enter item to add: ")
             shopping_list.append(item)
-        elif choice == '2':
+            print(f"'{item}' added to shopping list.")
+        elif choice == 2:
             item = input("Enter item to remove: ")
             if item in shopping_list:
                 shopping_list.remove(item)
+                print(f"'{item}' removed from shopping list.")
             else:
                 print(f"'{item}' not found in shopping list.")
-        elif choice == '3':
-            print("\nCurrent Shopping List:")
-            for item in shopping_list:  # Simple item listing
-                print(f"- {item}")
-        elif choice == '4':
+        elif choice == 3:
+            if shopping_list:
+                print("\nCurrent Shopping List:")
+                for item in shopping_list:
+                    print(f"- {item}")
+            else:
+                print("Your shopping list is empty.")
+        elif choice == 4:
             print("Goodbye!")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Please enter a number between 1-4.")
 
 if __name__ == "__main__":
     main()
