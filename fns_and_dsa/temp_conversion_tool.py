@@ -27,15 +27,18 @@ def main():
         
         if unit == 'F':
             converted_temp = convert_to_celsius(temperature)
-            print(f"{temperature}°F is {converted_temp}°C")
+            print(f"{temperature}°F is {converted_temp:.1f}°C")
         elif unit == 'C':
             converted_temp = convert_to_fahrenheit(temperature)
-            print(f"{temperature}°C is {converted_temp}°F")
+            print(f"{temperature}°C is {converted_temp:.1f}°F")
         else:
             raise ValueError("Invalid unit. Please enter 'C' or 'F'.")
     
     except ValueError as e:
-        print(f"Error: {e}")
+        if "could not convert string to float" in str(e):
+            print("Error: Please enter a valid numeric temperature.")
+        else:
+            print(f"Error: {e}")
         print("Please enter a valid temperature (numeric value) and unit (C/F).")
 
 if __name__ == "__main__":
